@@ -1,0 +1,93 @@
+<html>
+        <head>
+                <script src="scripts/jquery.js"></script>
+            <script src="scripts/ffrating.js"></script>
+            <link href="styles/ffrating.css" rel="stylesheet"   />
+            <style>
+            code{
+                background: #dedcdc;
+        padding: 10px;display: block;
+            }
+            .code-block-wrapper{
+                clear:both;
+                display: block;
+    padding-bottom: 50px;
+    overflow: hidden;
+            }
+            .code-block{
+                display: block;clear:both;
+                float: left;    padding-bottom: 20px;
+            }
+            .side-bar{
+                width:25%;display: block; 
+                float: left;
+            }
+            .main-content{
+                width:75%;display: block; 
+                float: left;
+            }
+            .side-bar ul>li{
+                list-style-type: none; 
+    
+            }
+            .side-bar ul>li>a{
+                text-decoration: none !important;
+                color:#272626;border-bottom: 1px solid #6d6c6c;
+    padding: 10px 5px;display: inline-block;
+            }
+            </style>
+        </head>
+        <body>
+            <h1>Custom Plugins</h1>
+            <div class="side-bar">
+                <ul><li><a href="#NPS">NPS</a></li>
+                    <li><a href="#STAR">Star rating</a></li></ul>
+            </div>
+            <div class="main-content">
+    <div class="code-block-wrapper"><h4 id="NPS">NPS Controls</h4>
+    <div class="code-block"><p>Default NPS initialization</p>
+    <input type="textbox" id="nps1" class="ff-rating" />
+    <code>$('#nps1').ffrating( {isStar:false});</code>
+    </div>
+    <div class="code-block"><p>Initialize NPS labels with data attributes</p>
+        <input type="textbox" id="nps2" data-flex-minlabel="Disagree"  data-flex-middlelabel="Neutral" data-flex-maxlabel="Agree"  class="ff-rating" />
+        
+        <code>
+            // Different html<br/>
+            &lt;input type="textbox" id="nps2" data-flex-minlabel="Disagree"  data-flex-middlelabel="Neutral" data-flex-maxlabel="Agree"  class="ff-rating" /&gt;
+            <br/>
+            //same code for initialization<br/>
+            $('#nps2').ffrating( {isStar:false});</code>
+        </div>
+        <div class="code-block"><p>Initialize NPS labels within javascript</p>
+
+        <input type="textbox" id="nps3"  class="ff-rating" />
+            <code>$('#nps3').ffrating({isStar:false,minLabel:'Disagree',mediumLabel:'Neutral',maxLabel:'Agree'});
+                </code>
+            </div>
+    </div>
+    <div class="code-block-wrapper"><h4 id="STAR">Star Rating Controls</h4>
+        <div class="code-block"><p>Default Star initialization</p>
+        <input type="textbox" id="star1" class="ff-rating" />
+        <code>$('#star1').ffrating({isStar:true});</code>
+        </div>
+         
+            <div class="code-block"><p>Initialize Star with readonly and option to show selected rating as value</p>
+    
+            <input type="textbox" id="star2" value="3"  class="ff-rating" />
+                <code>$('#star2').ffrating({isStar:true,readonly:true,showSelectedRating:true,min:1,max:5});</code>
+                </div>
+        </div>
+    </div>
+            <script>
+                 $(document).ready(function(){
+                     $('#nps1').ffrating({isStar:false});
+                     $('#nps2').ffrating({isStar:false});
+                     $('#nps3').ffrating({isStar:false,minLabel:'Disagree',mediumLabel:'Neutral',maxLabel:'Agree'});
+                     $('#star1').ffrating({isStar:true});
+                     $('#star2').ffrating({isStar:true,readonly:true,showSelectedRating:true,min:1,max:5});
+                      
+                });
+            </script>
+        </body>
+    </html>
